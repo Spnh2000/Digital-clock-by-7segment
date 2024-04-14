@@ -8,4 +8,7 @@ The decimal points of the units digits are turned on in even seconds and off in 
 
 (Please ensure that you adjust the reset circuit. I didn't set it in simulation.)
 
+(If you are unable to open the Proteus file, please use the provided picture to draw the simulation in Proteus.
+Then, add the hex file located in 'Digital clock by 7 segment c code\Debug\Exe')
+
 
