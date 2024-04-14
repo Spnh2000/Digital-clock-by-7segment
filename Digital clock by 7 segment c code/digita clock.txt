@@ -1,0 +1,92 @@
+        PORTC = DigitTo7Seg(seconds%10,1);
+        PORTD = ~0x01;
+        PORTC = DigitTo7Seg(seconds/10,1); 
+        PORTD = ~0x02;
+        PORTC = DigitTo7Seg(minutes%10,1);
+        PORTD = ~0x04;
+        PORTC = DigitTo7Seg(minutes/10,1); 
+        PORTD = ~0x08;
+        PORTC = DigitTo7Seg(hours%10,1); 
+        PORTD = ~0x10;
+        PORTC = DigitTo7Seg(hours/10,1);
+        PORTD = ~0x20;
+        
+       OCR1AH=0x7A;
+       OCR1AL=0x12; 
+        
+/*Decimal Digit (0-9) to Seven Segment Values Encoder*/
+unsigned char DigitTo7Seg(unsigned char digit, unsigned char common)
+{
+    unsigned char SegVal;
+ 
+    switch(digit)    
+    {    
+        case 0:    if(common == 1)    SegVal = 0b00111111;
+                else            SegVal = ~0b00111111;
+                break;
+        case 1:    if(common == 1)    SegVal = 0b00000110;
+                else            SegVal = ~0b00000110;
+                break;
+        case 2:    if(common == 1)    SegVal = 0b01011011;
+                else            SegVal = ~0b01011011;
+                break;
+        case 3:    if(common == 1)    SegVal = 0b01001111;
+                else            SegVal = ~0b01001111;
+                break;
+        case 4:    if(common == 1)    SegVal = 0b01100110;
+                else            SegVal = ~0b01100110;
+                break;
+        case 5:    if(common == 1)    SegVal = 0b01101101;
+                else            SegVal = ~0b01101101;
+                break;
+        case 6:    if(common == 1)    SegVal = 0b01111101;
+                else            SegVal = ~0b01111101;
+                break;
+        case 7:    if(common == 1)    SegVal = 0b00000111;
+                else            SegVal = ~0b00000111;
+                break;
+        case 8:    if(common == 1)    SegVal = 0b01111111;
+                else			SegVal = ~0b01111111;
+				break;
+		case 9:	if(common == 1)	SegVal = 0b01101111;
+				else			SegVal = ~0b01101111;		
+	}		
+	return SegVal;
+}
+
+
+
+void set_time (void)
+{
+   dot++;
+   switch (dot) {
+   case 1 :
+   dot_set_sec=0b10000000;
+   dot_set_min=0b00000000;
+   dot_set_hour=0b00000000; 
+
+   break;
+   case 2:
+   dot_set_sec=0b00000000;
+   dot_set_min=0b10000000;
+   dot_set_hour=0b00000000;
+
+   break; 
+   case 3:
+   dot_set_sec=0b00000000;
+   dot_set_min=0b00000000;
+   dot_set_hour=0b10000000;
+
+   break;                    
+   default:
+     if (dot >= 4) 
+    {  
+     dot=0; 
+     dot_set_sec=0b00000000;
+     dot_set_min=0b00000000;
+     dot_set_hour=0b00000000; 
+     pointer=0b00000000;
+     }
+   };
+   
+}

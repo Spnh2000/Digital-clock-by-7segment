@@ -1,0 +1,3 @@
+main DSTACK_USAGE:0 DSTACK_LEVEL:0 FILE:"digita clock.c" LINE:67
+display DSTACK_USAGE:1 DSTACK_LEVEL:1 FILE:"digita clock.c" LINE:12
+timer0_comp_isr DSTACK_USAGE:8 DSTACK_LEVEL:9 FILE:"digita clock.c" LINE:30

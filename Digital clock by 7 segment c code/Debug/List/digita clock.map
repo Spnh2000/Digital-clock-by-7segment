@@ -1,0 +1,24 @@
+RAM Allocation [bytes]
+Variable                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+cathode_seg                                                                       0x0260      10
+
+EEPROM Allocation [bytes]
+Variable                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+
+Register Allocation
+Variable                                                                          Register  Size
+------------------------------------------------------------------------------------------------
+hours                                                                             R5           1
+minutes                                                                           R4           1
+seconds                                                                           R7           1
+pointer                                                                           R8,R9        2
+
+FLASH Allocation [words]
+Function                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+display                                                                           0x00065     50
+timer0_comp_isr                                                                   0x00097     33
+timer1_compa_isr                                                                  0x000B8     22
+main                                                                              0x000CE     56

@@ -1,0 +1,12 @@
+VERSION:3 SOURCE_TIMESTAMP:546C79F9
+NODE:I LEVEL:0 LINE:1 "C:\cvavr\inc\mega32.h"
+NODE:I LEVEL:0 LINE:2 "C:\cvavr\inc\delay.h"
+NODE:V LEVEL:0 LINE:4 "hours -> R5"
+NODE:V LEVEL:0 LINE:5 "minutes -> R4"
+NODE:V LEVEL:0 LINE:6 "seconds -> R7"
+NODE:V LEVEL:0 LINE:8 "pointer -> R8,R9"
+NODE:V LEVEL:0 LINE:9 "cathode_seg -> RAM:????"
+NODE:F LEVEL:0 LINE:12 "display(void)"
+NODE:F LEVEL:0 LINE:30 "timer0_comp_isr(void)"
+NODE:F LEVEL:0 LINE:46 "timer1_compa_isr(void)"
+NODE:F LEVEL:0 LINE:67 "main(void)"
